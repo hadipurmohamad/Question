@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F0F0"
+    android:backgroundTint="#010623"
+    android:padding="10dp"
+    app:circularflow_radiusInDP="20dp">
+
+    <TextView
+        android:id="@+id/Tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="28dp"
+        android:gravity="start"
+        android:text="@string/Tittle_value"
+        android:textColor="#9C9696"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.034"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/question_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:text="@string/Question_header"
+        android:textColor="@color/gray_light"
+        app:layout_constraintBottom_toTopOf="@+id/Card_view"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/question_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:textColor="@color/gray_light"
+        app:layout_constraintBottom_toTopOf="@+id/Card_view"
+        app:layout_constraintStart_toEndOf="@+id/question_header" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:textColor="@color/gray_light"
+        app:layout_constraintBottom_toTopOf="@+id/Card_view"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/score_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:text="@string/score_header"
+        android:textColor="@color/gray_light"
+        app:layout_constraintBottom_toTopOf="@+id/Card_view"
+        app:layout_constraintEnd_toStartOf="@+id/score" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Card_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_9sdp"
+
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:backgroundTint="#120139"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_res_true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="SpeakableTextPresentCheck">
+
+            <TextView
+                android:id="@+id/show_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#AFAFAF"
+                android:textSize="@dimen/_20ssp"
+                tools:text="test text
+             safjadkjakdjsffkasdfafdasdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffflffkj;alkdjlakjdsa;lk" />
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_next_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:backgroundTint="#0B2043"
+        android:text="@string/btn_next_question"
+        android:textColor="#CFCACA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_previous_question" />
+
+    <Button
+        android:id="@+id/btn_previous_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:backgroundTint="#0B2043"
+        android:text="@string/btn_previous_question"
+        android:textColor="#CFCACA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_next_question"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_res_false"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="@dimen/_51sdp"
+        android:backgroundTint="#FF1744"
+        android:text="@string/btn_res_false"
+        app:layout_constraintBottom_toTopOf="@+id/btn_next_question"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_res_true" />
+
+    <Button
+        android:id="@+id/btn_res_true"
+        android:layout_width="178dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="@dimen/_51sdp"
+        android:backgroundTint="#2A9803"
+        android:text="@string/btn_res_true"
+        app:layout_constraintBottom_toTopOf="@+id/btn_previous_question"
+        app:layout_constraintEnd_toStartOf="@+id/btn_res_false"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
